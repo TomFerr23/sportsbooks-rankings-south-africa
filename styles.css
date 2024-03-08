@@ -1,0 +1,867 @@
+* {
+    box-sizing: border-box; /* Ensure padding does not affect the total width */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+body, main {
+    margin: 0;
+    padding: 0;
+}
+
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Suisse Int, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d131a;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 10px 40px;
+    height: 108px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Maximum width of the header content */
+    padding: 0 20px; /* Padding on the sides */
+}
+
+.logo-container img {
+    height: 40px; /* Adjust based on your logo's size */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    font-weight: 300;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: 40px; /* Space between nav items */
+}
+
+.nav-item img {
+    margin-right: 10px;
+    width: 20px; /* Adjust based on your preference */
+    height: 20px; /* Adjust based on your preference */
+    fill: currentColor; /* Icons color */
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto; /* Allow the header to grow as needed on smaller screens */
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container img {
+        height: 30px; /* Smaller logo on mobile */
+    }
+
+    .nav-item {
+        margin-left: 10px; /* Less space between nav items on mobile */
+        margin-top: 10px;
+    }
+
+    .nav-item img {
+        width: 16px; /* Smaller icons on mobile */
+        height: 16px; /* Smaller icons on mobile */
+    }
+}
+
+
+
+/* Main Content */
+
+/* Continuing from previous CSS definitions */
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap; /* Ensure elements can wrap as needed */
+    padding: 20px;
+    max-width: 1200px; /* Align with the header-container width */
+    margin: 40px auto; /* Center the main content */
+    color: #f0f0f0;
+}
+
+.main-text, .main-right {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.main-text {
+    flex: 1; /* Allow text section to grow and push the image to the right */
+}
+
+h1, h5 {
+    margin: 0; /* Remove default margins */
+}
+
+h5 {
+    margin-top: 10px; /* Space between titles */
+    font-weight: 300;
+}
+
+.main-right {
+    flex-basis: 250px; /* Adjust based on your image size */
+    align-self: flex-start; /* Align the image towards the top */
+}
+
+.main-image {
+    width: 80px; /* Ensure it's responsive */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* To adjust alignment with the card */
+    top: -10px; /* Adjust this value to align the top of the image as needed */
+    right: -172px
+}
+
+.info-card {
+    display: flex;
+    position: relative;
+    width: 100%; /* Stretch from logo line to the last nav item */
+    height: 202px; /* Fixed height as per requirement */
+    background-color: #f0f0f0; /* Placeholder color */
+    margin-top: 20px; /* Space between the titles and the card */
+    clear: both; /* Ensure it's below both the text and image */
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .main-right, .main-text {
+        flex: none;
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .main-image {
+        order: -1; /* Move the image above the text on smaller screens */
+        top: 0; /* Reset top alignment for mobile */
+    }
+
+    .info-card {
+        /* Mobile adjustments if necessary */
+    }
+}
+
+/* INFO CARD */
+.info-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* Example background color */
+    border-radius: 8px;
+    font-family: Suisse Int, sans-serif;
+    position: relative;
+}
+
+.card-section, .icons, .play-now {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-section > p, .icons > p, .play-now > p {
+    margin: 0; /* Remove default margin */
+}
+
+.card-section > svg:first-child + p {
+    font-size: 18px;
+}
+
+.card-section > p + svg {
+    margin-top: 7px;
+}
+
+.rates {
+    display: flex;
+    margin-left: 11px;
+}
+
+.rates .small-text {
+    font-size: 12px;
+    margin-right: 5px; /* Adjust based on design */
+    color: #BABABA;
+}
+
+.rates .large-text {
+    font-size: 18px;
+    margin-bottom: 7px; /* Space between rate pairs */
+    color: #3803CE;
+}
+
+.bonus h4, .promo h4 {
+    font-size: 18px;
+    color: #3803CE;
+    margin: 0 0 42px 0; /* Margin to separate from the h3 below */
+}
+
+/* Styling for "+150 FREE SPINS" */
+.bonus h3 {
+    color: #211F1F; /* Dark color for the text */
+    text-align: center; /* Center the text */
+    font-size: 22px; /* Adjust the font size as needed */
+    font-weight: bold; /* Keep the text bold */
+    margin: 0 auto; /* Center the element itself if necessary */
+    width: 100%; /* Ensure the width matches the parent if needed for centering */
+}
+
+/* Styling for "Add $1000 on $2000+" */
+.promo h3 {
+    color: #FF4C4C; /* Red color for the text */
+    text-align: center; /* Center the text */
+    font-size: 22px; /* Adjust the font size as needed */
+    font-weight: bold; /* Keep the text bold */
+    margin: 0 auto; /* Center the element itself if necessary */
+    width: 100%; /* Ensure the width matches the parent if needed for centering */
+}
+
+
+.promo h4 {
+    background-color: #CECEFD; /* Set the background color */
+    width: 163px; /* Set the width */
+    height: 43px; /* Set the height */
+    display: flex; /* Use flexbox to center the text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Ensure the text is centered */
+    color: #3803CE; /* Adjust the text color if needed */
+    font-size: 18px; /* Maintain the font size, adjust if necessary */
+    border-radius: 8px; /* Optional: add a border-radius if you want rounded corners */
+    margin: 0 0 42px 0; /* Adjust the margin as needed, based on your layout */
+}
+
+
+.bonus h3, .promo h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, 27px);
+    grid-gap: 10px; /* Adjust based on design */
+    margin-bottom: 10px; /* Space before the '+' sign */
+}
+
+.icons .plus-sign {
+    color: #D4AF37; /* Goldish color for the plus sign */
+    font-size: 24px; /* Adjust font size as needed */
+    text-align: center; /* Ensure the text itself is centered */
+    width: 100%; /* Take full width of its container for horizontal centering */
+    margin: 0; /* Remove default margins if necessary */
+    display: flex; /* Use flex to center content within */
+    justify-content: center; /* Center horizontally within the flex container */
+    align-items: center; /* Center vertically within the flex container */
+    height: 50px; /* Adjust height as necessary for vertical centering */
+}
+
+.play-now {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the wrapper */
+}
+
+.play-now-wrapper {
+    text-align: center;
+    display: inline-block; /* Make the wrapper as wide as its content */
+}
+
+.play-now button {
+    background-color: #f43e4d;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block; /* Ensure the button is a block-level element for margin to work */
+    margin-bottom: 10px; /* Space before the legal text */
+}
+
+.play-now p {
+    font-size: 12px;
+    color: #666; /* Example color */
+    max-width: 169px;
+    margin: 0 auto; /* Centers the text within the max-width */
+    text-align: center;
+}
+
+.brand-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Space between the card and the brand logos */
+    background-color: #282828;
+    border-radius: 8px;
+    width: 170px;
+    height: 80px;
+
+}
+
+.card-section .brand-name {
+    font-size: 18px;
+    color: #333;
+    margin-top: 7px; /* Space between the brand name and the logos */
+    text-align: center;
+}
+
+.card-section:first-child, .card-section:nth-child(2) {
+    min-height: 110px; /* Example minimum height */
+}
+
+.best-choice-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #D4AF37;
+    color: #3803CE;
+    padding: 5px 10px;
+    border-radius: 0 0 8px 0; /* Rounded bottom-right corner */
+    font-size: 11px; /* Adjust as needed */
+    font-weight: bold; /* Optional, for emphasis */
+    transform: translate(-0px, -11px); /* Adjust positioning as needed */
+}
+
+.best-choice-number {
+    font-size: 18px;
+    color: #3803CE;
+    font-weight: bold;
+}
+
+.play-now p {
+    color: #C8C8C8; 
+}
+
+
+/* CARD OPTIMISATION */
+@media (max-width: 768px) {
+    .info-card {
+        flex-direction: column;
+        align-items: center; /* Center-align the card content */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .card-section, .icons, .play-now {
+        align-items: center; /* Center content within each section */
+        text-align: center; /* Center-align text for readability */
+    }
+
+    .bonus h4, .promo h4, .bonus h3, .promo h3 {
+        margin: 10px 0; /* Add more space around text for readability */
+        width: auto; /* Allow text to take natural width */
+    }
+
+    .bonus h4, .promo h4 {
+        background-color: transparent; /* Optional: remove background on mobile for simplicity */
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+
+    .bonus h3, .promo h3 {
+        font-size: 18px; /* Adjust font size for better readability on mobile */
+    }
+
+    .icons img, .icons .plus-sign {
+        width: 24px; /* Adjust icon size for mobile */
+        height: auto; /* Maintain aspect ratio */
+        margin: 5px; /* Adjust spacing around icons */
+    }
+
+    .play-now button {
+        padding: 12px 24px; /* Increase padding for a larger touch target */
+    }
+
+    .play-now p {
+        font-size: 14px; /* Adjust font size for readability */
+    }
+
+    .best-choice-label {
+        font-size: 14px; /* Adjust the font size for visibility */
+        transform: translate(0, 0); /* Adjust or remove translation for mobile */
+    }
+
+    .brand-container img, .rates img {
+        width: 150px; /* Adjust brand and stars image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+
+
+/* FAQ */
+.faq-section {
+    background-color: #0d131a;
+    color: #ffffff;
+    padding: 20px; /* Adjust padding to match alignment with the h1 above */
+    margin-top: 40px; /* Space between the card and the FAQ section */
+    border-radius: 16px;
+}
+
+.faq-section h1 {
+    margin-bottom: 20px; /* Space between the section title and the first question */
+}
+
+.faq-item h4 {
+    font-size: 24px; /* As specified */
+    color: #ffffff; /* Ensure the question is visible against the section's background */
+    margin-bottom: 5px; /* Space between the question and the arrow */
+}
+
+.faq-item h3.arrow {
+    color: #E0E0E0; /* Light grey for the arrow, as specified */
+    font-size: 24px; /* Adjust size to match the visual hierarchy */
+    margin-bottom: 10px; /* Space between the arrow and the answer */
+}
+
+.faq-item p {
+    color: #B8B9D1; /* Lighter text color for the answer, as specified */
+    margin-right: 20px; /* Ensure the text aligns with the right edge of the card */
+    text-align: justify; /* Optional: improves readability of longer text blocks */
+}
+
+.faq-section, h1, h4, h3, p {
+    font-weight: 300;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background-color: #B8B9D1; /* Divider color */
+    margin: 20px 0; /* Space above and below the divider */
+}
+
+@media (max-width: 768px) {
+   .faq-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   }
+    
+    .faq-section h1 {
+        font-size: 24px; /* Adjust font size for better readability on mobile */
+    }
+
+    .faq-item h4 {
+        font-size: 24px; /* Adjust font size for better readability on mobile */
+    }
+
+    .faq-item h3.arrow {
+        font-size: 20px; /* Adjust font size for better readability on mobile */
+    }
+
+    .faq-item p {
+        margin-right: 0; /* Remove right margin for better readability on mobile */
+        font-size: 12px;
+    }
+
+}
+
+
+/* BENEFITS SECTION */
+.benefits-section {
+    background-color: #0d131a;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as needed for alignment */
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start; /* Align the icon and text at their top */
+    margin-bottom: 20px; /* Space between rows */
+    width: 48%; /* Adjust this value to manage spacing between two items */
+}
+
+.icon-placeholder {
+    width: 50px; /* Example width */
+    height: 50px; /* Example height */
+    margin-right: 10px; /* Space between the icon and the text */
+}
+
+.text-content h3 {
+    font-size: 24px;
+    color: #E0E0E0;
+    margin: 0 0 10px 0; /* Adjust spacing between h3 and p */
+}
+
+.text-content p {
+    color: #B8B9D1;
+    max-width: 504px; /* Maximum width for paragraph */
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .benefits-section {
+        flex-direction: column;
+    }
+
+    .benefits-section h3 {
+        font-size: 24px;
+    }
+
+    .benefits-section p {
+        font-size: 12px;
+    }
+
+    .benefit-item {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .text-content p {
+        max-width: 100%; /* Allow paragraph to expand full width on smaller screens */
+    }
+}
+
+/* FOOTER */
+.safe-play-section {
+    background-color: #0d131a;
+    padding: 40px 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.safe-play-section h1 {
+    font-size: 32px;
+    text-align: center; /* Center the title on the x-axis */
+    color: #ffffff; /* Adjust the color as needed */
+    margin-bottom: 20px; /* Space between the title and the images */
+}
+
+.safe-play-section .images-row {
+    display: flex;
+    justify-content: center; /* Center the images row */
+    align-items: center; /* Align the images vertically */
+    flex-wrap: wrap; /* Ensure responsiveness */
+    gap: 80px; /* Space between images */
+}
+
+.safe-play-section .images-row img {
+    /* Adjust the size of the images if needed */
+    width: auto; /* Adjust based on your needs */
+    height: 32px; /* Example height, adjust as needed */
+    /* Ensure images do not stretch beyond their container */
+    object-fit: cover;
+}
+
+
+/* Mobile-specific Styles */
+@media (max-width: 768px) {
+    .safe-play-section {
+        padding: 20px 10px; /* Further reduce padding for very small screens */
+    }
+
+    .safe-play-section h1 {
+        font-size: 24px; /* Further reduce the font size for better readability on mobile */
+    }
+
+    .safe-play-section .images-row {
+        gap: 10px; /* Narrower gaps between images to fit more content on the screen */
+    }
+
+    .safe-play-section .images-row img {
+        height: 24px; /* Adjust image size to be smaller on mobile */
+    }
+}
+
+.copyright {
+    background-color: #0d131a;
+    color: #B8B9D1;
+    width: 100%;
+    padding: 20px;
+    font-size: 12px;
+    text-align: center; /* Center the text */
+    border-radius: 8px;
+    font-weight: 300;
+}
+
+
+
+
+
+
+
+/* Global Styles for safe-play-section, as previously defined */
+
+/* Mobile-specific Styles */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden !important;
+    }
+
+    .safe-play-section {
+        padding: 20px 10px; /* Optimal padding for mobile */
+    }
+
+    .safe-play-section .images-row {
+        display: flex;
+        flex-direction: row; /* Align items in a row */
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically for aesthetics */
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        gap: 10px; /* Adjust the gap for a tighter layout on mobile */
+    }
+
+    .safe-play-section .images-row img {
+        margin: 0 auto; /* Center each image/card within its flex container */
+        display: block; /* Treat the image as a block-level element for margin auto to work */
+        height: 24px; /* Adjust height as needed for mobile */
+        /* Additional adjustments for image/card size */
+    }
+
+    /* If you have specific card elements other than images */
+    .info-card {
+        display: flex; /* Enable flex layout */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        flex-direction: column; /* Stack any child elements vertically */
+        width: 80%; /* Full width to utilize the available space */
+        margin: 10px auto; /* Center the card horizontally within its container */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .info-card {
+        flex-direction: column;
+        align-items: center; /* Ensure all content is centered */
+        padding:  20px; /* Adjust padding for optimal spacing */
+        border: solid 5px #D4AF37; /* Maintain border styling */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+
+    .card-section {
+        width: 100%; /* Use full width for each section */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+
+    .card-section:last-child {
+        margin-bottom: 0; /* Remove bottom margin for the last section */
+    }
+
+    .brand-container img, .rates img, .icons img {
+        max-width: 100px; /* Reduce size for mobile */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center images */
+    }
+
+    .bonus h4, .promo h4 {
+        font-size: 16px; /* Slightly smaller font size for headings */
+        background-color: #CECEFD; /* Keep or remove background color as needed */
+        padding: 5px 10px; /* Adjust padding for background */
+        border-radius: 4px; /* Optional: adjust border-radius for aesthetics */
+        margin: 0 auto 10px; /* Center heading and add space below */
+        width: fit-content; /* Adjust width to content */
+    }
+
+    .bonus h3, .promo h3 {
+        font-size: 18px; /* Ensure large text is readable */
+        color: #FF4C4C; /* Maintain color distinction */
+        margin: 0 auto 20px; /* Center and add space below */
+        width: fit-content; /* Adjust width to content */
+    }
+
+    .icons .plus-sign {
+        font-size: 20px; /* Adjust for visibility */
+        color: #D4AF37; /* Maintain color styling */
+        margin: 10px auto; /* Center and add vertical space */
+    }
+
+    .play-now button {
+        padding: 10px 20px; /* Adjust for easier interaction */
+        font-size: 16px; /* Ensure text is easily readable */
+        margin-bottom: 15px; /* Space before legal text */
+    }
+
+    .play-now p {
+        font-size: 12px; /* Adjust for readability */
+        color: #C8C8C8; /* Maintain color styling */
+        text-align: center; /* Ensure text is centered */
+        max-width: 90%; /* Adjust width for padding */
+        margin: 0 auto; /* Center text */
+    }
+
+    .best-choice-label {
+        font-size: 14px; /* Adjust for mobile visibility */
+        transform: translate(0, -50%); /* Position above the card */
+        top: 0; /* Align to the top edge of the card */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center the label correctly */
+    }
+
+    .main-right .main-image {
+        width: 60px; /* Adjust size for mobile */
+        margin: 20px auto; /* Center the image */
+    }
+
+    .play-now .small {
+        font-size: 8px; /* Adjust for readability */
+    }
+}
+
+
+/* REMOVE DEFAULT STYLE FOR THE A LINKS */
+a {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Makes the link color inherit from its parent element */
+    background-color: transparent; /* Ensures no background color is applied */
+    font-style: normal; /* Removes any default italic styling */
+}
+
+/* Optional: Style for hover, active, and visited states */
+a:hover, a:active, a:visited {
+    text-decoration: none; /* Removes underline on hover, active, and visited states */
+    color: inherit; /* Ensures the color remains consistent */
+}
+
+
+/* Footer */
+
+/* Existing styles */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #0d131a;
+    color: #ffffff;
+    border-top: 1px solid #cecece;
+}
+
+.footer-content h3 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.footer-content .policy-links {
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 16px !important;
+}
+
+.policy-links li {
+    margin: 0 20px;
+    display: inline;
+    color: #cecece;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #fefefe;
+    color: black;
+}
+
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Additional styles for modal content */
+.modal-content h4 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.modal-content ol, .modal-content ul {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.modal-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Removing default list style */
+.modal-content ol {
+    list-style-type: decimal;
+}
+
+.modal-content ul {
+    list-style-type: none;
+}
+
+.modal-content ul li {
+    background: url('path-to-your-bullet-image') no-repeat left top;
+    padding-left: 20px; /* Adjust based on your bullet image size */
+}
+
+/* If you don't want custom bullets and just want plain text */
+.modal-content ul li {
+    padding-left: 0;
+}
+
+
+
+

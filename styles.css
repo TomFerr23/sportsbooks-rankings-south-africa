@@ -14,14 +14,15 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Suisse Int, sans-serif;
+    background-color: #0d131a;
 }
 
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0d131a;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #FF4C4C;
     border-bottom: 1px solid #ffffff;
     padding: 10px 40px;
     height: 108px;
@@ -37,7 +38,7 @@ body, html {
 }
 
 .logo-container img {
-    height: 40px; /* Adjust based on your logo's size */
+    height: 80px; /* Adjust based on your logo's size */
 }
 
 .nav-list {
